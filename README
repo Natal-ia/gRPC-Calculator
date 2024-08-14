@@ -1,41 +1,24 @@
-Instrucciones para Ejecutar el Proyecto de Calculadora gRPC
+Proyecto de Calculadora gRPC
+Instrucciones para Ejecutar el Proyecto
 
 1. Instalación de Dependencias
-Antes de comenzar, es necesario instalar las siguientes librerías para trabajar con gRPC y Protocol Buffers en Python:
-
-```bash
-pip install grpcio grpcio-tools
-```
+Antes de comenzar, es necesario instalar las siguientes librerías para trabajar con gRPC y Protocol Buffers en Python: 
+    pip install grpcio grpcio-tools
 
 2. Generar Archivos de Python a partir del Archivo .proto
-Utiliza grpcio-tools para generar los archivos de Python necesarios (calculadora_pb2.py y calculadora_pb2_grpc.py) a partir del archivo calculadora.proto. Ejecuta el siguiente comando en la terminal:
-
-```bash
-python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. calculadora.proto
-```
-Nota: Los archivos calculadora_pb2_grpc.py y calculadora_pb2.py se generan automáticamente con el comando anterior. No debes editarlos manualmente.
+Utilizar grpcio-tools para generar los archivos de Python necesarios (calculadora_pb2.py y calculadora_pb2_grpc.py) a partir del archivo calculadora.proto. Ejecutar el siguiente comando en la terminal:
+    python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. calculadora.proto
+    Nota: Los archivos calculadora_pb2_grpc.py y calculadora_pb2.py se generan automáticamente con el comando anterior. No debes editarlos manualmente.
 
 3. Ejecutar el Servidor
 Para iniciar el servidor, utiliza el siguiente comando:
+    python servidor.py
 
-```bash
-python servidor.py
-```
 4. Ejecutar el Cliente
-Puedes ejecutar el cliente para realizar operaciones de suma o resta proporcionando los números directamente desde la línea de comandos. Utiliza el siguiente formato:
-
-```bash
-python cliente.py [sumar/restar] [Numero1] [Numero2]
-```
+Se puede ejecutar el cliente para realizar operaciones de suma o resta proporcionando los números directamente desde la línea de comandos. Utilizando el siguiente formato:
+    python cliente.py [sumar/restar] [Numero1] [Numero2]
 Ejemplos:
-Para restar 15 y 3:
-
-```bash
-python cliente.py restar 15 3
-```
-Para sumar 10 y 5:
-
-```bash
-python cliente.py sumar 10 5
-```
-
+  Para restar 15 y 3:
+    python cliente.py restar 15 3
+  Para sumar 10 y 5:
+    python cliente.py sumar 10 5
