@@ -1,0 +1,21 @@
+syntax = "proto3"; // Especifica la versión de la sintaxis de Protocol Buffers
+
+// Definición del servicio Calculadora
+service Calculadora {
+  // RPC para la operación de suma
+  rpc Sumar (OperacionSolicitud) returns (OperacionRespuesta);
+  
+  // RPC para la operación de resta
+  rpc Restar (OperacionSolicitud) returns (OperacionRespuesta);
+}
+
+// Mensaje que define la solicitud para las operaciones
+message OperacionSolicitud {
+  double numero1 = 1; // Primer número de la operación
+  double numero2 = 2; // Segundo número de la operación
+}
+
+// Mensaje que define la respuesta de las operaciones
+message OperacionRespuesta {
+  double resultado = 1; // Resultado de la operación
+}
