@@ -5,7 +5,7 @@ import sys
 
 def ejecutar(operacion, numero1, numero2):
     # Crea un canal de comunicación con el servidor gRPC
-    with grpc.insecure_channel('localhost:50051') as canal:
+    with grpc.insecure_channel('10.195.40.26:50051') as canal:
         # Crea un stub (cliente) a partir del canal
         stub = calculadora_pb2_grpc.CalculadoraStub(canal)
 

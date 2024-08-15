@@ -26,9 +26,10 @@ def servir():
     # Registra el servicio Calculadora en el servidor
     calculadora_pb2_grpc.add_CalculadoraServicer_to_server(CalculadoraServicer(), servidor)
     # Especifica el puerto donde el servidor estará escuchando
-    servidor.add_insecure_port('[::]:50051')
+    servidor.add_insecure_port('10.195.40.26:50051')
     # Inicia el servidor
     servidor.start()
+    print('Servidor en ejecución...')
     # Mantiene el servidor en ejecución
     servidor.wait_for_termination()
 
